@@ -1,0 +1,12 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: #000;  /* fundo escuro */
+  position: relative; /* necessário para stacking funcionar corretamente */
+  z-index: 0;         /* base */
+  scroll-behavior: smooth;
+}
