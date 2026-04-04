@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 export const Section = styled.section`
   padding: 5rem 2rem;
+
+  @media (max-width: 768px) {
+    padding: 3rem 1rem;
+  }
 `;
 
 export const TitleSection = styled.h1`
@@ -10,6 +14,14 @@ export const TitleSection = styled.h1`
   color: #b957d9;
   font-weight: 800;
   margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.8rem;
+  }
 `;
 
 export const Grid = styled.div`
@@ -35,7 +47,6 @@ export const Card = styled.div`
   overflow: hidden;
   aspect-ratio: 16 / 10;
   cursor: default;
-
   background: #0f0a14;
 
   &:hover img {
@@ -49,11 +60,10 @@ export const Image = styled.img`
   height: 100%;
   object-fit: cover;
   display: block;
-
   transition: 0.6s ease;
 `;
 
-/* 🔥 OVERLAY (TOTALMENTE ESCONDIDO) */
+/* OVERLAY */
 export const Overlay = styled.div`
   position: absolute;
   inset: 0;
@@ -63,30 +73,28 @@ export const Overlay = styled.div`
   justify-content: flex-end;
   padding: 1.5rem;
 
-  /* 🔥 começa invisível */
   opacity: 0;
   visibility: hidden;
-
-  /* animação */
   transform: translateY(30px);
   transition: all 0.4s ease;
 
-  /* fundo roxo */
   background: linear-gradient(
     to top,
     rgba(185, 87, 217, 0.9),
     rgba(185, 87, 217, 0.7),
     rgba(185, 87, 217, 0.5),
     rgba(185, 87, 217, 0.3),
-   
     transparent
   );
 
-  /* 🔥 aparece só no hover */
   ${Card}:hover & {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
   }
 `;
 
@@ -96,6 +104,14 @@ export const Title = styled.h3`
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   font-weight: 800;
   font-size: 1.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
 `;
 
 export const Tech = styled.span`
@@ -105,20 +121,29 @@ export const Tech = styled.span`
   color: #fff;
   font-weight: 800;
   font-size: 1rem;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 
   padding: 5px 10px;
   border-radius: 8px;
-
   border: 1px solid #b957d9;
 
-  width: fit-content; /* 🔥 garante tamanho exato */
+  width: fit-content;
 
   transition: 0.3s;
 
   ${Card}:hover & {
     background: #b957d9;
     box-shadow: 0 0 10px #b957d9;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    padding: 4px 8px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.75rem;
   }
 `;
 
@@ -128,28 +153,59 @@ export const Description = styled.p`
   font-size: 1.1rem;
   line-height: 1.4;
   margin-top: 5px;
+
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+    line-height: 1.3;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+  }
 `;
 
-/* LINKS */
+/* LINKS (BOTÕES) */
 export const Links = styled.div`
   display: flex;
-  gap: 20px;
+  gap: 12px;
   margin-top: 10px;
+  flex-wrap: wrap;
 
   a {
     text-decoration: none;
-    font-size: 1rem;
-    padding: 10px 15px;
-    border-radius: 8px;
+    font-size: 0.9rem;
+    padding: 6px 10px;
+    border-radius: 6px;
     background: #fff;
     color: #b957d9;
-    font-weight: 800;
+    font-weight: 700;
     transition: 0.3s;
+    width: fit-content;
   }
 
   a:hover {
     background: #090909;
     color: #b957d9;
-    font-weight: 800;
+  }
+
+  @media (max-width: 768px) {
+    gap: 8px;
+
+    a {
+      font-size: 0.8rem;
+      padding: 5px 8px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    a {
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      width: fit-content;
+    }
   }
 `;
