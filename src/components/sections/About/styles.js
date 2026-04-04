@@ -19,6 +19,7 @@ export const AboutWrapper = styled.div`
     margin-top: 50px;
   }
 
+
   h1 {
     color: #fff;
     font-size: 2rem;

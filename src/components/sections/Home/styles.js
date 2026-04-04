@@ -71,7 +71,7 @@ export const Container = styled.div`
 
   /* Typing */
   .typing {
-    margin-top: 2px;
+    margin-top: 20px;
     font-size: 50px;
     color: #fff;
     min-height: 40px;

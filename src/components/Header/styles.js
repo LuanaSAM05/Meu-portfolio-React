@@ -1,4 +1,10 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { motion } from "framer-motion";
+
+const borderAnimation = keyframes`
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
+`;
 
 /* HEADER */
 export const HeaderContainer = styled.header`
@@ -6,52 +12,37 @@ export const HeaderContainer = styled.header`
   top: 0;
   width: 100%;
   padding: 20px 30px;
-
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   z-index: 20;
-
-  animation: slideDown 0.8s ease forwards;
-
-  @keyframes slideDown {
-    from {
-      transform: translateY(-100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
 `;
 
-/* NAV */
-export const Nav = styled.nav`
+/* WRAPPER */
+export const NavWrapper = styled.div`
+  width: 100%;
+  max-width: 1200px;
+
   display: flex;
-  gap: 60px;
+  align-items: center;
+  justify-content: space-between; /* 🔥 ESSENCIAL */
+
+  position: relative;
+`;
+
+/* NAV DESKTOP */
+export const Nav = styled.nav`
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 50px;
   font-size: 20px;
   align-items: center;
 
-  /* 📱 RESPONSIVO */
-@media (max-width: 768px) {
-    .jWHzme {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background: #0f0a14;
-        padding: 10px 5px;
-        justify-content:  space-evenly;
-        gap: 10px;
-        flex-wrap: wrap;
-        border-top: 1px solid #222;
-    }
-}
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 /* LINKS */
@@ -62,28 +53,6 @@ export const NavLink = styled.a`
   font-weight: 500;
   cursor: pointer;
 
-  opacity: 0;
-  transform: translateY(-60px);
-
-  animation: fadeDown 2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-
-  &:nth-child(1) { animation-delay: 0.8s; }
-  &:nth-child(2) { animation-delay: 1s; }
-  &:nth-child(3) { animation-delay: 1.2s; }
-  &:nth-child(4) { animation-delay: 1.4s; }
-  &:nth-child(5) { animation-delay: 1.6s; }
-
-  @keyframes fadeDown {
-    from {
-      opacity: 0;
-      transform: translateY(-60px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
   &::after {
     content: "";
     position: absolute;
@@ -92,20 +61,147 @@ export const NavLink = styled.a`
     width: 0%;
     height: 2px;
     background: #b957d9;
-    transition: 0.6s ease;
+    transition: 0.4s ease;
   }
 
-  &:hover::after {
-    width: 100%;
+  &:hover::after { width: 100%; }
+  &:hover { color: #fff; }
+`;
+
+/* BOTÃO DOWNLOAD */
+export const DownloadButton = styled(motion.button)`
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+
+  border-radius: 50px;
+  background: linear-gradient(
+    90deg,
+    #656565,
+    #ce63f2,
+    #6d0590,
+    #440559,
+    #656565
+  );
+  background-size: 200%;
+  animation: ${borderAnimation} 4s linear infinite;
+
+  padding: 3px;
+  transition: transform 0.3s ease;
+
+  svg {
+    color: #b957d9;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  span {
+    padding: 7px 25px;
+    border-radius: 50px;
+    background: #0d0d0d;
+    font-size: 15px;
+    color: #b957d9;
+    font-weight: 600;
+    white-space: nowrap;
   }
 
   &:hover {
-    color: #fff;
-    text-shadow: 0 0 8px #c464e4;
+    transform: translateY(-4px) scale(1.03);
   }
 
-  /* 📱 MOBILE */
   @media (max-width: 768px) {
-    font-size: 12px; /* 🔥 menor pra caber tudo */
+    width: 220px; /* 🔥 evita ficar pequeno demais */
+
+    span {
+      width: 100%;
+      text-align: center;
+      padding: 7px 20px;
+    }
+  }
+`;
+
+/* DROPDOWN */
+export const DropdownMenu = styled.div`
+  position: absolute;
+  top: 110%;
+  left: 0;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  background: #111;
+  border-radius: 10px;
+  padding: 5px 5px;
+  text-align: center;
+  min-width: 180px;
+  z-index: 50;
+
+  a {
+    color: #b957d9;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover {
+      background: #2c0c3a;
+      color: #fff;
+    }
+  }
+
+  @media (max-width: 768px) {
+    position: initial;
+    width: 100%;
+  }
+`;
+
+/* HAMBURGER */
+export const Hamburger = styled.div`
+  display: none;
+  color: #b957d9;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: block;
+    position: fixed; /* 🔥 evita ficar em cima do botão */
+    right: 20px;
+    top: 25px;
+    z-index: 1000;
+  }
+`;
+
+/* MOBILE MENU */
+export const MobileMenu = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+
+  background: rgba(15,10,20,0.95);
+  backdrop-filter: blur(6px);
+  z-index: 20;
+
+  animation: fadeIn 0.3s ease;
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  a {
+    font-size: 22px;
+    color: #b957d9;
+  }
+
+  ${DownloadButton} {
+    width: 220px;
   }
 `;

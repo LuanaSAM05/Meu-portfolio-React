@@ -51,7 +51,7 @@ function About() {
     }, 500);
   };
 
-  // 🔥 animações
+  // animações
   const fadeUp = {
     hidden: { opacity: 0, y: 60 },
     show: {
@@ -82,7 +82,7 @@ function About() {
           viewport={{ once: true }}
         >
           <motion.div className="text" variants={container}>
-            <motion.h1 variants={fadeUp} data-aos="fade-down">
+            <motion.h1 variants={fadeUp}>
               Olá, eu sou a <span>Luana Melo</span>
             </motion.h1>
 
@@ -109,6 +109,7 @@ function About() {
               freelance para desenvolvimento de sites, onde eu possa aplicar
               meus conhecimentos e crescer profissionalmente.
             </motion.p>
+
           </motion.div>
 
           {/* Imagens */}
@@ -138,9 +139,7 @@ function About() {
           <h2>Education</h2>
 
           <div className="edu-item">
-            <h3>
-              <span className="symbol">✿</span> Desenvolvimento Full Stack
-            </h3>
+            <h3>✿ Desenvolvimento Full Stack</h3>
             <span>Em andamento</span>
             <p>
               Curso com <strong>Rodolfo Mori</strong> no{" "}
@@ -149,13 +148,11 @@ function About() {
           </div>
 
           <div className="edu-item">
-            <h3>
-              <span className="symbol">✿</span> Quality Assurance (QA)
-            </h3>
+            <h3>✿ Quality Assurance (QA)</h3>
             <span>Concluído</span>
             <p>
-              Curso com <strong>Gustavo Farias</strong> desde 20 de Maio de 2025,{" "}
-              <br />
+              Curso com <strong>Gustavo Farias</strong> desde 20 de Maio de
+              2025, <br />
               com foco em testes e garantia de qualidade.
             </p>
           </div>
