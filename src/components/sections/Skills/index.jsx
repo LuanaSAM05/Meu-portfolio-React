@@ -39,14 +39,13 @@ function Skills() {
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut",
       },
     },
   };
 
   return (
     <Container id="skills">
-      <Title id="title-skills">Skills</Title>
+      <Title>Skills</Title>
 
       {/* Frontend */}
       <Category>
@@ -54,42 +53,17 @@ function Skills() {
           <span className="symbol">✿</span>Frontend
         </CategoryTitle>
 
-        <motion.div
+        <SkillsGrid
+          as={motion.div}
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true }}
         >
-          <SkillsGrid>
-            <motion.div variants={item}>
-              <Card>
-                <Icon><FaHtml5 /></Icon>
-                <SkillName>HTML</SkillName>
-              </Card>
-            </motion.div>
-
-            <motion.div variants={item}>
-              <Card>
-                <Icon><FaCss3Alt /></Icon>
-                <SkillName>CSS</SkillName>
-              </Card>
-            </motion.div>
-
-            <motion.div variants={item}>
-              <Card>
-                <Icon><FaJs /></Icon>
-                <SkillName>JavaScript</SkillName>
-              </Card>
-            </motion.div>
-
-            <motion.div variants={item}>
-              <Card>
-                <Icon><FaReact /></Icon>
-                <SkillName>React</SkillName>
-              </Card>
-            </motion.div>
-          </SkillsGrid>
-        </motion.div>
+          <motion.div variants={item}><Card><Icon><FaHtml5 /></Icon><SkillName>HTML</SkillName></Card></motion.div>
+          <motion.div variants={item}><Card><Icon><FaCss3Alt /></Icon><SkillName>CSS</SkillName></Card></motion.div>
+          <motion.div variants={item}><Card><Icon><FaJs /></Icon><SkillName>JavaScript</SkillName></Card></motion.div>
+          <motion.div variants={item}><Card><Icon><FaReact /></Icon><SkillName>React</SkillName></Card></motion.div>
+        </SkillsGrid>
       </Category>
 
       {/* Backend */}
@@ -98,21 +72,19 @@ function Skills() {
           <span className="symbol">✿</span>Backend
         </CategoryTitle>
 
-        <motion.div
+        <SkillsGrid
+          as={motion.div}
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true }}
         >
-          <SkillsGrid>
-            <motion.div variants={item}>
-              <Card>
-                <Icon><FaNodeJs /></Icon>
-                <SkillName>Node.js</SkillName>
-              </Card>
-            </motion.div>
-          </SkillsGrid>
-        </motion.div>
+          <motion.div variants={item} className="full">
+            <Card>
+              <Icon><FaNodeJs /></Icon>
+              <SkillName>Node.js</SkillName>
+            </Card>
+          </motion.div>
+        </SkillsGrid>
       </Category>
 
       {/* Tools */}
@@ -121,28 +93,26 @@ function Skills() {
           <span className="symbol">✿</span>Tools
         </CategoryTitle>
 
-        <motion.div
+        <SkillsGrid
+          as={motion.div}
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true }}
         >
-          <SkillsGrid>
-            <motion.div variants={item}>
-              <Card>
-                <Icon><FaGitAlt /></Icon>
-                <SkillName>Git</SkillName>
-              </Card>
-            </motion.div>
+          <motion.div variants={item} className="half">
+            <Card>
+              <Icon><FaGitAlt /></Icon>
+              <SkillName>Git</SkillName>
+            </Card>
+          </motion.div>
 
-            <motion.div variants={item}>
-              <Card>
-                <Icon><FaGithub /></Icon>
-                <SkillName>GitHub</SkillName>
-              </Card>
-            </motion.div>
-          </SkillsGrid>
-        </motion.div>
+          <motion.div variants={item} className="half">
+            <Card>
+              <Icon><FaGithub /></Icon>
+              <SkillName>GitHub</SkillName>
+            </Card>
+          </motion.div>
+        </SkillsGrid>
       </Category>
     </Container>
   );
