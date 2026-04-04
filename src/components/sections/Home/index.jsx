@@ -1,7 +1,7 @@
 import { Container } from "./styles";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-import bgVideo from "../../../assets/videos/Borboleta-Roxa.mp4";
+import bgVideo from "../../../assets/videos/borboleta-roxa.mp4";
 
 export function Home() {
   return (
