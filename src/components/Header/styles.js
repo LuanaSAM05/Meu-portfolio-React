@@ -46,8 +46,8 @@ export const Nav = styled.nav`
         width: 100%;
         background: #0f0a14;
         padding: 10px 5px;
-        justify-content: initial;
-        gap: 40px;
+        justify-content:  space-evenly;
+        gap: 10px;
         flex-wrap: wrap;
         border-top: 1px solid #222;
     }

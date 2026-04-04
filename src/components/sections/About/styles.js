@@ -207,6 +207,10 @@ export const AboutWrapper = styled.div`
       text-align: center;
     }
 
+      .text {
+      margin: 0;
+    }
+
     .images {
       justify-content: center;
       margin-top: 20px;
@@ -216,5 +220,30 @@ export const AboutWrapper = styled.div`
       width: 180px;
       height: 240px;
     }
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+
+  .carousel-container {
+    width: 100%;
+    max-width: 320px; /* 🔥 reduz o tamanho do carrossel */
+    margin: 0 auto;
+  }
+
+  .carousel-track {
+    gap: 20px; /* 🔥 diminui espaço entre imagens */
+  }
+
+  .carousel-track img {
+    max-width: 250px; /* 🔥 menor no mobile */
+    max-height: 160px;
+    margin: 30px 0;
+  }
+
+  .carousel-btn {
+    font-size: 1rem;
+    padding: 8px 10px;
+  }
+}
   }
 `;
