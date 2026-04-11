@@ -8,7 +8,7 @@ export const Container = styled.div`
     overflow: hidden;
   }
 
-  /* VIDEO */
+ 
   .left {
     width: 100%;
     height: 100%;
@@ -26,7 +26,7 @@ export const Container = styled.div`
     margin-left: 170px;
   }
 
-  /* TEXTO */
+  
   .right {
     width: 50%;
     display: flex;
@@ -38,7 +38,7 @@ export const Container = styled.div`
     font-family: "Poppins", sans-serif;
   }
 
-  /* H1 */
+ 
   .right h1 {
     font-size: 50px;
     line-height: 1.3;
@@ -53,7 +53,7 @@ export const Container = styled.div`
     animation-delay: 0.8s;
   }
 
-  /* Nome */
+  
   .name {
     margin-left: 90px;
     margin-top: 35px;
@@ -69,7 +69,7 @@ export const Container = styled.div`
     animation-delay: 1.2s;
   }
 
-  /* Typing */
+  
   .typing {
     margin-top: 20px;
     font-size: 50px;
@@ -87,7 +87,7 @@ export const Container = styled.div`
     white-space: nowrap;
   }
 
-  /* Gradient overlay */
+  
   #home::after {
     content: "";
     position: absolute;
@@ -105,7 +105,7 @@ export const Container = styled.div`
     z-index: 1;
   }
 
-  /* ANIMAÇÃO */
+  
   @keyframes fadeDown {
     from {
       opacity: 0;
@@ -117,7 +117,7 @@ export const Container = styled.div`
     }
   }
 
-  /* RESPONSIVO */
+ 
   @media (max-width: 768px) {
     #home {
       justify-content: center;

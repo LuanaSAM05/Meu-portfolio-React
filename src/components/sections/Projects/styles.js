@@ -40,7 +40,6 @@ export const FeaturedWrapper = styled.div`
   justify-content: center;
 `;
 
-/* CARD */
 export const Card = styled.div`
   position: relative;
   border-radius: 20px;
@@ -54,7 +53,6 @@ export const Card = styled.div`
   }
 `;
 
-/* IMAGEM */
 export const Image = styled.img`
   width: 100%;
   height: 100%;
@@ -63,7 +61,6 @@ export const Image = styled.img`
   transition: 0.6s ease;
 `;
 
-/* OVERLAY */
 export const Overlay = styled.div`
   position: absolute;
   inset: 0;
@@ -98,7 +95,6 @@ export const Overlay = styled.div`
   }
 `;
 
-/* TEXTO */
 export const Title = styled.h3`
   color: #fafafa;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
@@ -147,7 +143,6 @@ export const Tech = styled.span`
   }
 `;
 
-/* DESCRIÇÃO */
 export const Description = styled.p`
   color: #fff;
   font-size: 1.1rem;
@@ -164,7 +159,6 @@ export const Description = styled.p`
   }
 `;
 
-/* LINKS (BOTÕES) */
 export const Links = styled.div`
   display: flex;
   gap: 12px;

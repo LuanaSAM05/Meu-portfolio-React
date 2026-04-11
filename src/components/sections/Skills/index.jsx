@@ -47,7 +47,7 @@ function Skills() {
     <Container id="skills">
       <Title>Skills</Title>
 
-      {/* Frontend */}
+      
       <Category>
         <CategoryTitle>
           <span className="symbol">✿</span>Frontend
@@ -66,7 +66,7 @@ function Skills() {
         </SkillsGrid>
       </Category>
 
-      {/* Backend */}
+      
       <Category>
         <CategoryTitle>
           <span className="symbol">✿</span>Backend
@@ -87,7 +87,7 @@ function Skills() {
         </SkillsGrid>
       </Category>
 
-      {/* Tools */}
+      
       <Category>
         <CategoryTitle>
           <span className="symbol">✿</span>Tools

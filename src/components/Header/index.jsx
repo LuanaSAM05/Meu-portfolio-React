@@ -21,7 +21,7 @@ export default function Header() {
     <HeaderContainer>
       <NavWrapper>
 
-        {/* BOTÃO ÚNICO */}
+        
         <div style={{ position: "relative" }}>
           <DownloadButton onClick={() => setOpenCV(!openCV)}>
             <FaDownload />
@@ -36,7 +36,7 @@ export default function Header() {
           )}
         </div>
 
-        {/* LINKS */}
+        
         <Nav>
           <NavLink href="#home">Home</NavLink>
           <NavLink href="#about">About</NavLink>
@@ -47,12 +47,12 @@ export default function Header() {
 
       </NavWrapper>
 
-      {/* HAMBURGER */}
+      
       <Hamburger onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
       </Hamburger>
 
-      {/* MOBILE */}
+      
       {isOpen && (
         <MobileMenu>
           <NavLink href="#home">Home</NavLink>
@@ -61,7 +61,7 @@ export default function Header() {
           <NavLink href="#projects">Projects</NavLink>
           <NavLink href="#contact">Contact</NavLink>
 
-          {/* MESMO BOTÃO NO MOBILE */}
+          
           <div style={{ position: "relative" }}>
             <DownloadButton onClick={() => setOpenCV(!openCV)}>
               <FaDownload />

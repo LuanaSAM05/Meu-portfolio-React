@@ -6,7 +6,7 @@ const borderAnimation = keyframes`
   100% { background-position: 200%; }
 `;
 
-/* HEADER */
+
 export const HeaderContainer = styled.header`
   position: fixed;
   top: 0;
@@ -18,19 +18,19 @@ export const HeaderContainer = styled.header`
   z-index: 20;
 `;
 
-/* WRAPPER */
+
 export const NavWrapper = styled.div`
   width: 100%;
   max-width: 1200px;
 
   display: flex;
   align-items: center;
-  justify-content: space-between; /* 🔥 ESSENCIAL */
+  justify-content: space-between; 
 
   position: relative;
 `;
 
-/* NAV DESKTOP */
+
 export const Nav = styled.nav`
   position: absolute;
   left: 50%;
@@ -45,7 +45,7 @@ export const Nav = styled.nav`
   }
 `;
 
-/* LINKS */
+
 export const NavLink = styled.a`
   position: relative;
   color: #b957d9;
@@ -68,7 +68,6 @@ export const NavLink = styled.a`
   &:hover { color: #fff; }
 `;
 
-/* BOTÃO DOWNLOAD */
 export const DownloadButton = styled(motion.button)`
   position: relative;
   display: flex;
@@ -113,7 +112,7 @@ export const DownloadButton = styled(motion.button)`
   }
 
   @media (max-width: 768px) {
-    width: 220px; /* 🔥 evita ficar pequeno demais */
+    width: 220px; 
 
     span {
       width: 100%;
@@ -123,7 +122,7 @@ export const DownloadButton = styled(motion.button)`
   }
 `;
 
-/* DROPDOWN */
+
 export const DropdownMenu = styled.div`
   position: absolute;
   top: 110%;
@@ -156,7 +155,7 @@ export const DropdownMenu = styled.div`
   }
 `;
 
-/* HAMBURGER */
+
 export const Hamburger = styled.div`
   display: none;
   color: #b957d9;
@@ -164,14 +163,14 @@ export const Hamburger = styled.div`
 
   @media (max-width: 768px) {
     display: block;
-    position: fixed; /* 🔥 evita ficar em cima do botão */
+    position: fixed; 
     right: 20px;
     top: 25px;
     z-index: 1000;
   }
 `;
 
-/* MOBILE MENU */
+
 export const MobileMenu = styled.div`
   position: fixed;
   top: 0;

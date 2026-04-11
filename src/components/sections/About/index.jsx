@@ -17,6 +17,8 @@ import Certificado8 from "../../../assets/img/certificado8.jpg";
 function About() {
   const carouselRef = useRef(null);
 
+  console.log(motion);
+
   const certificados = [
     Certificado1,
     Certificado2,
@@ -51,7 +53,7 @@ function About() {
     }, 500);
   };
 
-  // animações
+  
   const fadeUp = {
     hidden: { opacity: 0, y: 60 },
     show: {
@@ -73,7 +75,7 @@ function About() {
   return (
     <AboutWrapper>
       <section id="about">
-        {/* Conteúdo principal */}
+        
         <motion.div
           className="content"
           variants={container}
@@ -112,7 +114,7 @@ function About() {
 
           </motion.div>
 
-          {/* Imagens */}
+          
           <motion.div
             className="images"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -128,7 +130,7 @@ function About() {
           </motion.div>
         </motion.div>
 
-        {/* Education */}
+        
         <motion.div
           className="education"
           initial={{ opacity: 0, y: 80 }}
@@ -158,7 +160,7 @@ function About() {
           </div>
         </motion.div>
 
-        {/* Certificados */}
+        
         <motion.div
           className="certifications"
           initial={{ opacity: 0, y: 80 }}

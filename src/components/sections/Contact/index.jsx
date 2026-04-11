@@ -17,7 +17,7 @@ export default function Contact() {
   return (
     <Section as={motion.section} id="contact">
 
-      {/* TEXTO DO TOPO */}
+      
       <TopText
         as={motion.div}
         initial={{ opacity: 0, y: 40 }}
@@ -33,7 +33,7 @@ export default function Contact() {
 
       <Container>
 
-        {/* LADO ESQUERDO */}
+        
         <Left
           as={motion.div}
           initial={{ opacity: 0, x: -80 }}
@@ -82,7 +82,7 @@ export default function Contact() {
           </Socials>
         </Left>
 
-        {/* LADO DIREITO */}
+        
         <Right
           as={motion.div}
           initial={{ opacity: 0, x: 80 }}

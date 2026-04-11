@@ -113,7 +113,7 @@ export const Icon = styled.div`
 
   ${Card}:hover & {
     transform: scale(1.2) rotate(5deg);
-    color: #fff; /* 🔥 volta pro branco no hover */
+    color: #fff; 
   }
 
   @media (max-width: 768px) {
@@ -131,7 +131,7 @@ export const SkillName = styled.p`
   transition: 0.3s;
 
   ${Card}:hover & {
-    color: #b957d9; /* 🔥 texto fica roxo no hover */
+    color: #b957d9; 
   }
 
   @media (max-width: 768px) {

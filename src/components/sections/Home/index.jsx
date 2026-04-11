@@ -8,7 +8,7 @@ export function Home() {
     <Container>
       <section id="home">
 
-        {/* VIDEO COM FRAMER MOTION */}
+        
         <motion.div
           className="left"
           initial={{ opacity: 0, scale: 0.9, x: 80 }}
@@ -24,7 +24,7 @@ export function Home() {
           </video>
         </motion.div>
 
-        {/* TEXTO COM CSS ANIMATION (cascata) */}
+       
         <div className="right">
           <h1>
             Olá, eu sou a
