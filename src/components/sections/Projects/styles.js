@@ -1,205 +1,177 @@
+// src/components/Projects/styles.js
+
 import styled from "styled-components";
 
 export const Section = styled.section`
-  padding: 5rem 2rem;
-
-  @media (max-width: 768px) {
-    padding: 3rem 1rem;
-  }
+  padding: 6rem 2rem;
+  background: black;
+  text-align: center;
+  align-self: center;
 `;
 
 export const TitleSection = styled.h1`
   text-align: center;
-  font-size: 3rem;
-  color: #b957d9;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: #fff;
   font-weight: 800;
-  margin-bottom: 40px;
+  letter-spacing: -0.02em;
+  margin-bottom: 200px;
+  margin-top: -80px;
 
-  @media (max-width: 768px) {
-    font-size: 2.2rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1.8rem;
+  span {
+    color: #b957d9;
   }
 `;
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
+  grid-template-columns: 1fr;
+  gap: 8rem;
+  max-width: 900px;
+  margin: 0 auto;
 `;
 
-export const FeaturedWrapper = styled.div`
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-`;
-
-export const Card = styled.div`
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  aspect-ratio: 16 / 10;
-  cursor: default;
-  background: #0f0a14;
-
-  &:hover img {
-    transform: scale(1.08);
-  }
-`;
-
-export const Image = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: 0.6s ease;
-`;
-
-export const Overlay = styled.div`
-  position: absolute;
-  inset: 0;
-
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: 1.5rem;
-
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(30px);
-  transition: all 0.4s ease;
-
-  background: linear-gradient(
-    to top,
-    rgba(185, 87, 217, 0.9),
-    rgba(185, 87, 217, 0.7),
-    rgba(185, 87, 217, 0.5),
-    rgba(185, 87, 217, 0.3),
-    transparent
-  );
-
-  ${Card}:hover & {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-
-  @media (max-width: 768px) {
-    padding: 1rem;
-  }
+  gap: 2.5rem;
 `;
 
-export const Title = styled.h3`
-  color: #fafafa;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-  font-weight: 800;
-  font-size: 1.5rem;
-
-  @media (max-width: 768px) {
-    font-size: 1.2rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1rem;
-  }
-`;
-
-export const Tech = styled.span`
+export const Label = styled.span`
   display: inline-block;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: ${({ color }) => color || "#b957d9"};
+  margin-top: 50px;
+  text-align: center;
+`;
 
-  background: rgba(185, 87, 217, 0.2);
-  color: #fff;
+export const ProjectName = styled.h2`
+  font-size: 40px;
   font-weight: 800;
-  font-size: 1rem;
-  margin-bottom: 20px;
-
-  padding: 5px 10px;
-  border-radius: 8px;
-  border: 1px solid #b957d9;
-
-  width: fit-content;
-
-  transition: 0.3s;
-
-  ${Card}:hover & {
-    background: #b957d9;
-    box-shadow: 0 0 10px #b957d9;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 0.85rem;
-    margin-bottom: 15px;
-    padding: 4px 8px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 0.75rem;
-  }
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 50px;
+  margin-top: 15px;
+  text-align: center;
 `;
 
 export const Description = styled.p`
-  color: #fff;
-  font-size: 1.1rem;
-  line-height: 1.4;
-  margin-top: 5px;
+  color: #aaa;
+  font-size: 18px;
+  line-height: 1.65;
+  max-width: 620px;
+  margin: -25px auto 20px auto;
+  text-align: center;
+`;
 
-  @media (max-width: 768px) {
-    font-size: 0.95rem;
-    line-height: 1.3;
-  }
+export const TechList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+  justify-content: center;
+`;
 
-  @media (max-width: 480px) {
-    font-size: 0.85rem;
+export const TechPill = styled.span`
+  font-size: 15px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid ${({ color }) => color || "#b957d9"}55;
+  color: ${({ color }) => color || "#b957d9"};
+  background: ${({ color }) => color || "#b957d9"}11;
+  letter-spacing: 0.03em;
+`;
+
+export const LinksRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+`;
+
+export const LinkBtn = styled.a`
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+  cursor: pointer;
+
+  ${({ $primary, color }) =>
+    $primary
+      ? `background: ${color || "#b957d9"}; color: #fff;`
+      : `background: #1a1a1a; color: #ccc; border: 1px solid #333;`}
+
+  &:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
   }
 `;
 
-export const Links = styled.div`
-  display: flex;
-  gap: 12px;
-  margin-top: 10px;
-  flex-wrap: wrap;
-
-  a {
-    text-decoration: none;
-    font-size: 0.9rem;
-    padding: 6px 10px;
-    border-radius: 6px;
-    background: #fff;
-    color: #b957d9;
-    font-weight: 700;
-    transition: 0.3s;
-    width: fit-content;
-  }
-
-  a:hover {
-    background: #090909;
-    color: #b957d9;
-  }
+/* ══════════════════════
+   DEVBURGUER
+══════════════════════ */
+export const DevScene = styled.div`
+  position: relative;
+  width: 100%;
+  height: 460px;
+  overflow: visible;
 
   @media (max-width: 768px) {
-    gap: 8px;
-
-    a {
-      font-size: 0.8rem;
-      padding: 5px 8px;
-    }
+    height: 320px;
   }
 
   @media (max-width: 480px) {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    height: 240px;
+  }
+`;
 
-    a {
-      font-size: 0.75rem;
-      padding: 4px 8px;
-      width: fit-content;
-    }
+export const DevPlatform = styled.img`
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+`;
+
+export const DevNotebook = styled.img`
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.65));
+`;
+
+export const DevMobile = styled.img`
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 16px 32px rgba(0,0,0,0.6));
+`;
+
+/* ══════════════════════
+   ADVOGADA
+══════════════════════ */
+export const AdvScene = styled.div`
+  position: relative;
+  width: 100%;
+  height: 720px;
+  overflow: visible;
+  perspective: 2600px;
+  transform-style: preserve-3d;
+
+  @media (max-width: 900px) {
+    height: 560px;
+  }
+
+  @media (max-width: 768px) {
+    height: 440px;
+  }
+
+  @media (max-width: 480px) {
+    height: 360px;
   }
 `;
